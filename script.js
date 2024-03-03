@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function addTextToTerminal(text, color) {
         var newContent;
         if (!firstMessageAdded) { // Hvis det er den første besked
-            newContent = "<div style='animation: fadeIn 0.5s ease forwards;'>root@xkow.xyz:~# <span style='color: " + color + ";'>" + text + "</span></div>";
+            newContent = "<div style='animation: fadeIn 0.5s ease forwards;'><span style='color: " + color + ";'>root@xkow.xyz:~# " + text + "</span></div>";
             firstMessageAdded = true; // Angiv flag til true, så vi ved, at den første besked er blevet tilføjet
         } else {
             newContent = "<div style='animation: fadeIn 0.5s ease forwards;'>root@xkow.xyz:~# " + text + "</div>"; // Hvis det ikke er den første besked, tilføj uden ekstra stilarter
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (inputText.toLowerCase() === "help") {
             // Tilføj besked med en forsinkelse på 0.2 sekunder
             setTimeout(function() {
-                addTextToTerminal("lorem ipsum og lidt mere", "green");
+                addTextToTerminal("\n\nwelcome to the xkow.xyz command center\n\ncommands:\n  help     shows this menu\n  clear    clears the terminal", "green");
             }, 200); // 200 millisekunders forsinkelse (0.2 sekunder)
             addTextToTerminal(inputText, "white"); // Tilføj besked om hjælp med det samme, men i hvid farve
         } else if (inputText.toLowerCase() === "clear") {
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
     inputLine.focus();
   
     // Tilføj initialbesked til terminalen ved indlæsningstidspunktet
-    addTextToTerminal("Error 403: Skriv 'help' for mere information.", "red");
+    addTextToTerminal("Error 403: Type 'help' for more information.", "red");
     
 
     // Lyt efter tastaturhændelser på input-linjen
