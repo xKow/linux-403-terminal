@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // Anvend en timeout til at indsætte tekst efter en forsinkelse
         setTimeout(function() {
           // Tilføj det, der er skrevet, til terminal-indholdet med "root@xkow.xyz" med fade-effekt
-          var newContent = "<div style='color: white; opacity: 0; animation: fadeIn 0.5s ease forwards;'>root@xkow.xyz: " + inputText + "</div>";
+          var newContent = "<div style='color: white; opacity: 0; animation: fadeIn 0.5s ease forwards;'>root@xkow.xyz:~#   " + inputText + "</div>";
           terminalContent.innerHTML += newContent;
         }, 300); // 300 millisekunders forsinkelse
       }

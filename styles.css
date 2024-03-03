@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+
+body, .title, .prompt, .input-line {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+
 body {
     display: flex;
     justify-content: center;
@@ -5,7 +12,6 @@ body {
     height: 100vh;
     margin: 0;
     background-color: black;
-    font-family: 'Ubuntu', sans-serif;
   }
   
   .terminal {
@@ -55,7 +61,7 @@ body {
 
   
   .input-line:focus {
-    color: green;
+    color: rgb(255, 255, 255);
   }
   
   .content {
@@ -67,11 +73,13 @@ body {
   }
   
   .input-line {
+    font-family: 'JetBrains Mono', monospace;
+    line-height: 1.4; /* Juster line-height for at skabe mere plads mellem linjerne */  
     background-color: transparent;
     border: none; /* Fjernet border-bottom */
     color: inherit;
     flex-grow: 1;
-    padding: 0 10px;
+    padding: 0 0px;
     outline: none;
     cursor: text;
     position: relative;
@@ -84,7 +92,7 @@ body {
     height: 16px; /* Højde på firkanten */
     font-size: 14px; /* Justering af størrelsen på tegnet */
     line-height: 16px; /* Justering af linjehøjden for at centrere tegnet */
-    color: limegreen; /* Farven på firkanten */
+    color: rgb(255, 255, 255); /* Farven på firkanten */
     position: absolute;
     bottom: 6px; /* Justering af firkanten i forhold til input-linjen */
     animation: blink-caret 0.8s step-end infinite;
