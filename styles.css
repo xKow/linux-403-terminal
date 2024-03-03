@@ -127,12 +127,12 @@ body {
     overflow: hidden; /* Skjuler teksten, der er længere end containeren */
     white-space: nowrap; /* Forhindrer teksten i at blive vist på flere linjer */
     animation: typing 3s steps(40, end); /* Simulerer typewriter-effekten */
-    line-height: 1.2; /* Justerer linjehøjden for at mindske pladsen */
-    margin: 0; /* Fjerner margen */
-    padding: 0; /* Fjerner polstring */
 
   }
-  
+.fade-in-text {
+    color: red; /* Ændrer tekstens farve til rød */
+    animation: typing 3s steps(40, end); /* Tilføjer typewriter-effekt */
+  }  
   /* Keyframes for typewriter-animation */
   @keyframes typing {
     from { width: 0; } /* Starter med en bredde på 0 */

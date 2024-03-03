@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     var inputLine = document.getElementById("input-line");
     var terminalContent = document.getElementById("terminal-content");
-    var maxLines = 13; // Antal linjer, terminalen skal indeholde
+    var maxLines = 17; // Antal linjer, terminalen skal indeholde
 
     // Funktion til at tilføje ny tekst til terminalen med fade-in-animation
     function addTextToTerminal(text) {
@@ -17,6 +17,10 @@ document.addEventListener("DOMContentLoaded", function() {
     // Fokuser input-linjen, når DOM'en er blevet fuldt indlæst
     inputLine.focus();
   
+    // Tilføj initialbesked til terminalen ved indlæsningstidspunktet
+    addTextToTerminal("Error 403: Skriv 'help' for mere information.");
+    
+
     // Lyt efter tastaturhændelser på input-linjen
     inputLine.addEventListener("keydown", function(event) {
       // Hvis Enter-tasten trykkes
