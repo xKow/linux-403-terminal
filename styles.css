@@ -68,22 +68,25 @@ body {
   
   .input-line {
     background-color: transparent;
-    border: none;
+    border: none; /* Fjernet border-bottom */
     color: inherit;
     flex-grow: 1;
     padding: 0 10px;
     outline: none;
     cursor: text;
-    position: relative; /* Tilføjet relativ position for at give plads til caret */
+    position: relative;
   }
   
+  
   .input-line::after {
-    content: "|";
+    content: "\258B"; /* Unicode-tegnet for en lodret firkant (▋) */
     width: 2px; /* Bredde på firkanten */
-    height: 14px; /* Højde på firkanten */
-    background-color: limegreen;
+    height: 16px; /* Højde på firkanten */
+    font-size: 14px; /* Justering af størrelsen på tegnet */
+    line-height: 16px; /* Justering af linjehøjden for at centrere tegnet */
+    color: limegreen; /* Farven på firkanten */
     position: absolute;
-    bottom: 3px; /* Justering af firkanten i forhold til input-linjen */
+    bottom: 6px; /* Justering af firkanten i forhold til input-linjen */
     animation: blink-caret 0.8s step-end infinite;
   }
   
@@ -95,6 +98,7 @@ body {
       opacity: 1;
     }
   }
+  
   
   
   @keyframes fadeIn {
