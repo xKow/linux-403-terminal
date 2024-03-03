@@ -74,7 +74,8 @@ body {
   
   .input-line {
     font-family: 'JetBrains Mono', monospace;
-    line-height: 1.4; /* Juster line-height for at skabe mere plads mellem linjerne */  
+    line-height: 1.4; /* Juster line-height for at skabe mere plads mellem linjerne */
+    margin-left: 20px; /* Tilføjet margin til venstre side for at rykke teksten lidt længere til højre */  
     background-color: transparent;
     border: none; /* Fjernet border-bottom */
     color: inherit;
