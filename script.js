@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     var inputLine = document.getElementById("input-line");
     var terminalContent = document.getElementById("terminal-content");
-    var maxLines = 5; // Antal linjer, terminalen skal indeholde
+    var maxLines = 13; // Antal linjer, terminalen skal indeholde
 
     // Funktion til at tilføje ny tekst til terminalen med fade-in-animation
     function addTextToTerminal(text) {

@@ -127,6 +127,10 @@ body {
     overflow: hidden; /* Skjuler teksten, der er længere end containeren */
     white-space: nowrap; /* Forhindrer teksten i at blive vist på flere linjer */
     animation: typing 3s steps(40, end); /* Simulerer typewriter-effekten */
+    line-height: 1.2; /* Justerer linjehøjden for at mindske pladsen */
+    margin: 0; /* Fjerner margen */
+    padding: 0; /* Fjerner polstring */
+
   }
   
   /* Keyframes for typewriter-animation */
