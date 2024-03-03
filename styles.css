@@ -5,18 +5,17 @@ body {
     height: 100vh;
     margin: 0;
     background-color: black;
+    font-family: 'Ubuntu', sans-serif;
   }
   
   .terminal {
     background-color: #2b2b2b;
     border-radius: 5px;
     border: 1px solid #ccc;
-    width: 700px; /* Ændret bredden */
-    height: 450px; /* Ændret højden */
+    width: 700px; /* Øget bredden */
+    height: 450px; /* Øget højden */
     display: flex;
     flex-direction: column;
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 18px; /* Øget størrelsen */
     color: limegreen;
   }
   
@@ -50,6 +49,21 @@ body {
   
   .prompt {
     margin-right: 10px;
+    font-weight: bold; /* Tilføjet fed skrift */
+    width: 130px; /* Øget bredden af prompt */
+  }
+
+  
+  .input-line:focus {
+    color: green;
+  }
+  
+  .content {
+    padding: 10px 20px;
+    color: white;
+    flex-grow: 1;
+    overflow-y: auto;
+    white-space: pre-wrap;
   }
   
   .input-line {
@@ -60,19 +74,35 @@ body {
     padding: 0 10px;
     outline: none;
     cursor: text;
+    position: relative; /* Tilføjet relativ position for at give plads til caret */
   }
   
-  .input-line:focus {
-    color: rgb(255, 255, 255);
+  .input-line::after {
+    content: "|";
+    width: 2px; /* Bredde på firkanten */
+    height: 14px; /* Højde på firkanten */
+    background-color: limegreen;
+    position: absolute;
+    bottom: 3px; /* Justering af firkanten i forhold til input-linjen */
+    animation: blink-caret 0.8s step-end infinite;
   }
   
-  .content {
-    padding: 10px 20px;
-    color: white;
-    font-weight: bold; /* Tilføjet fed skrift */
-    flex-grow: 1;
-    overflow-y: auto;
-    white-space: pre-wrap;
+  @keyframes blink-caret {
+    from, to {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
   }
   
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
   
