@@ -17,7 +17,7 @@ body {
     flex-direction: column;
     font-family: 'Ubuntu', sans-serif;
     font-size: 18px; /* Øget størrelsen */
-    color: rgb(164, 212, 164);
+    color: limegreen;
   }
   
   .title-bar {
@@ -68,9 +68,11 @@ body {
   
   .content {
     padding: 10px 20px;
-    color: inherit;
+    color: white;
+    font-weight: bold; /* Tilføjet fed skrift */
     flex-grow: 1;
     overflow-y: auto;
     white-space: pre-wrap;
   }
+  
   

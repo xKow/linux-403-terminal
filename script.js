@@ -11,12 +11,17 @@ document.addEventListener("DOMContentLoaded", function() {
       if (event.key === "Enter") {
         // Få teksten fra input-linjen
         var inputText = inputLine.textContent.trim();
-        // Tilføj det, der er skrevet, til terminal-indholdet med "root@xkow.xyz"
-        terminalContent.innerHTML += "<div style='color: green;'>root@xkow.xyz: " + inputText + "</div>";
         // Ryd input-linjen
         inputLine.textContent = "";
         // Forhindre standard opførsel af Enter-tasten
         event.preventDefault();
+        
+        // Anvend en timeout til at indsætte tekst efter en forsinkelse
+        setTimeout(function() {
+          // Tilføj det, der er skrevet, til terminal-indholdet med "root@xkow.xyz" med fade-effekt
+          var newContent = "<div style='color: white; opacity: 0; animation: fadeIn 0.5s ease forwards;'>root@xkow.xyz: " + inputText + "</div>";
+          terminalContent.innerHTML += newContent;
+        }, 300); // 300 millisekunders forsinkelse
       }
     });
   
@@ -26,4 +31,3 @@ document.addEventListener("DOMContentLoaded", function() {
       inputLine.focus();
     });
   });
-  
