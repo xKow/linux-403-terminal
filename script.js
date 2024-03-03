@@ -1,6 +1,18 @@
 document.addEventListener("DOMContentLoaded", function() {
     var inputLine = document.getElementById("input-line");
     var terminalContent = document.getElementById("terminal-content");
+    var maxLines = 5; // Antal linjer, terminalen skal indeholde
+
+    // Funktion til at tilføje ny tekst til terminalen med fade-in-animation
+    function addTextToTerminal(text) {
+        var newContent = "<div style='animation: fadeIn 0.5s ease forwards;'>root@xkow.xyz:~# " + text + "</div>";
+        terminalContent.insertAdjacentHTML('beforeend', newContent);
+
+        // Fjern den ældste tekst, hvis terminalen er blevet for lang
+        while (terminalContent.children.length > maxLines) {
+            terminalContent.removeChild(terminalContent.children[0]);
+        }
+    }
   
     // Fokuser input-linjen, når DOM'en er blevet fuldt indlæst
     inputLine.focus();
@@ -16,12 +28,8 @@ document.addEventListener("DOMContentLoaded", function() {
         // Forhindre standard opførsel af Enter-tasten
         event.preventDefault();
         
-        // Anvend en timeout til at indsætte tekst efter en forsinkelse
-        setTimeout(function() {
-          // Tilføj det, der er skrevet, til terminal-indholdet med fade-in-animation
-          var newContent = "<div class='fade-in-text'>root@xkow.xyz:~# " + inputText + "</div>";
-          terminalContent.innerHTML += newContent;
-        }, 300); // 300 millisekunders forsinkelse
+        // Tilføj den indtastede tekst til terminalen
+        addTextToTerminal(inputText);
       }
     });
   
@@ -30,4 +38,4 @@ document.addEventListener("DOMContentLoaded", function() {
       // Fokusér input-linjen når der trykkes på en tast
       inputLine.focus();
     });
-  });
+});

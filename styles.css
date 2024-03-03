@@ -70,6 +70,8 @@ body {
     flex-grow: 1;
     overflow-y: auto;
     white-space: pre-wrap;
+    padding-bottom: 5px;
+    overflow-y: hidden;
   }
   
   .input-line {
@@ -117,5 +119,19 @@ body {
     to {
       opacity: 1;
     }
+  }
+  
+  /* CSS for initialbeskeden */
+.initial-message {
+    color: red;
+    overflow: hidden; /* Skjuler teksten, der er længere end containeren */
+    white-space: nowrap; /* Forhindrer teksten i at blive vist på flere linjer */
+    animation: typing 3s steps(40, end); /* Simulerer typewriter-effekten */
+  }
+  
+  /* Keyframes for typewriter-animation */
+  @keyframes typing {
+    from { width: 0; } /* Starter med en bredde på 0 */
+    to { width: 100%; } /* Endelig bredde er 100% af containeren */
   }
   
