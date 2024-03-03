@@ -4,17 +4,20 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #2b2b2b;
-    font-family: "Ubuntu Mono", monospace;
+    background-color: black;
   }
   
   .terminal {
     background-color: #2b2b2b;
     border-radius: 5px;
     border: 1px solid #ccc;
-    width: 600px; /* Ændret bredden til 600px */
+    width: 700px; /* Ændret bredden */
+    height: 450px; /* Ændret højden */
     display: flex;
     flex-direction: column;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px; /* Øget størrelsen */
+    color: rgb(164, 212, 164);
   }
   
   .title-bar {
@@ -39,24 +42,35 @@ body {
     cursor: pointer;
   }
   
-  .content {
-    padding: 20px;
-    color: white;
-    flex-grow: 1;
-    overflow-y: auto;
-    white-space: pre-wrap;
-    min-height: 200px; /* Tilføjet minimumshøjde */
+  .input-container {
+    display: flex;
+    align-items: center;
+    padding: 5px 20px;
+  }
+  
+  .prompt {
+    margin-right: 10px;
   }
   
   .input-line {
     background-color: transparent;
     border: none;
-    color: white;
-    font-family: "Ubuntu Mono", monospace;
-    padding: 5px 20px;
-    width: calc(100% - 40px);
-    box-sizing: border-box;
+    color: inherit;
+    flex-grow: 1;
+    padding: 0 10px;
     outline: none;
     cursor: text;
+  }
+  
+  .input-line:focus {
+    color: rgb(255, 255, 255);
+  }
+  
+  .content {
+    padding: 10px 20px;
+    color: inherit;
+    flex-grow: 1;
+    overflow-y: auto;
+    white-space: pre-wrap;
   }
   
