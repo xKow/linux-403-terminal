@@ -18,7 +18,7 @@ body {
   .terminal {
     background-color: #2b2b2b;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #000000;
     width: 700px; /* Øget bredden */
     height: 450px; /* Øget højden */
     display: flex;
@@ -63,6 +63,7 @@ body {
   
   .input-line:focus {
     color: rgb(255, 255, 255);
+    outline: none; /* Fjerner markeret boks, når inputfeltet er i fokus */
   }
   
   .content {
@@ -73,6 +74,8 @@ body {
     white-space: pre-wrap;
     padding-bottom: 5px;
     overflow-y: hidden;
+    outline: none; /* Fjerner markeret boks, når inputfeltet er i fokus */
+
   }
   
   .input-line {
