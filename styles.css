@@ -11,7 +11,8 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: black;
+    background: url('/pictures/ubuntu15.04-wallpaper.jpg') no-repeat center center fixed;
+
   }
   
   .terminal {
@@ -117,3 +118,19 @@ body {
     to { width: 100%; } /* Endelig bredde er 100% af containeren */
   }
   
+  html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden; /* Forhindrer scrollning */
+  }
+  
+  .background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/pictures/ubuntu15.04-wallpaper.jpg') no-repeat center center fixed;
+    background-size: cover;
+    z-index: -1; /* Placer baggrundsbilledet bag alle andre elementer */
+  }
