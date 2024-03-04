@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var terminalContent = document.getElementById("terminal-content");
     var maxLines = 17; // Antal linjer, terminalen skal indeholde
     var firstMessageAdded = false; // Flag for at spore, om den første besked er tilføjet
+    terminalContent.spellcheck = false;
 
     // Funktion til at tilføje ny tekst til terminalen med fade-in-animation
     function addTextToTerminal(text, color) {
@@ -15,9 +16,16 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         terminalContent.insertAdjacentHTML('beforeend', newContent);
 
-        // Fjern den ældste tekst, hvis terminalen er blevet for lang
-        while (terminalContent.children.length > maxLines) {
-            terminalContent.removeChild(terminalContent.children[0]);
+        // Opdater antallet af linjer i terminalen
+        var lines = terminalContent.children.length;
+
+        // Hvis antallet af linjer overskrider maxLines
+        if (lines > maxLines) {
+            // Fjern overskydende linjer
+            var excessLines = lines - maxLines;
+            for (var i = 0; i < excessLines; i++) {
+                terminalContent.removeChild(terminalContent.children[0]);
+            }
         }
     }
 
@@ -32,9 +40,10 @@ document.addEventListener("DOMContentLoaded", function() {
             firstMessageAdded = false; // Nulstil flagget for den første besked
             return ""; // Returner tom streng, da der ikke skal tilføjes tekst til terminalen
         } else if (inputText.toLowerCase() === "whyamihere") {
-            return "\n\nyou're on this page because you tried to access something that you didn't have the right permission to";
+            return "\n\nyou're on this page be  cause you tried to access something that you didn't have the right permission to";
         } else if (inputText.toLowerCase() === "github") {
             return "\n\ngithub/xkow";
+            window.location.replace("https://github.com/xkow","_self");
         } else if (inputText.toLowerCase() === "myip") {
             // Implementer funktionen til at hente IP-adressen her
             // Her er et eksempel på, hvordan du kan gøre det med JavaScript fetch API
