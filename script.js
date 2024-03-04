@@ -33,24 +33,24 @@ document.addEventListener("DOMContentLoaded", function() {
     function handleCommand(inputText) {
         // Håndter "help" kommando
         if (inputText.toLowerCase() === "help") {
-            return "\n\nwelcome to the xkow.xyz command center\n\ncommands:\n  help          shows this menu\n  clear         clears the terminal\n  myip          shows your ip\n  whyamihere    answers all your questions\n  github        directs you to the person who made this";
+            return "help\n\nwelcome to the xkow.xyz command center\n\ncommands:\n  help          shows this menu\n  clear         clears the terminal\n  ipconfig      shows your ip\n  whyamihere    answers all your questions\n  github        directs you to the person who made this";
         } else if (inputText.toLowerCase() === "clear") {
             // Tøm indholdet af terminalen
-            terminalContent.innerHTML = "";
+            terminalContent.innerHTML = "Terminal Cleared";
             firstMessageAdded = false; // Nulstil flagget for den første besked
             return ""; // Returner tom streng, da der ikke skal tilføjes tekst til terminalen
         } else if (inputText.toLowerCase() === "whyamihere") {
-            return "\n\nyou're on this page be  cause you tried to access something that you didn't have the right permission to";
+            return "whyamihere\n\nyou're on this page be  cause you tried to access something that you didn't have the right permission to";
         } else if (inputText.toLowerCase() === "github") {
-            return "\n\ngithub/xkow";
-            window.location.replace("https://github.com/xkow","_self");
-        } else if (inputText.toLowerCase() === "myip") {
+            window.open("https://github.com/xkow", "_blank");
+            return "github\n\ngithub/xkow";        
+        } else if (inputText.toLowerCase() === "ipconfig") {
             // Implementer funktionen til at hente IP-adressen her
             // Her er et eksempel på, hvordan du kan gøre det med JavaScript fetch API
             fetch('https://api.ipify.org?format=json')
                 .then(response => response.json())
                 .then(data => {
-                    addTextToTerminal(data.ip, "white");
+                    addTextToTerminal("ipconfig\n" + data.ip, "white");
                 });
             // Returner tom streng, da der ikke skal tilføjes tekst til terminalen endnu
             return "";
