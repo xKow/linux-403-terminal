@@ -1,6 +1,7 @@
 # Linux Terminal 403 Error Page
 
 Welcome to the Linux Terminal 403 Error Page! 🚀
+[**Try it out for yourself**](https://xkow.xyz/error/index.html)
 
 This project serves as a creative and interactive alternative to the typical "Access Denied" or "Forbidden" error pages. Instead of a bland message, users will encounter an emulation of a Linux terminal, providing a fun and engaging experience even in the face of an error.
 
@@ -35,5 +36,3 @@ This project is licensed under the **xkow.xyz** License - see the [LICENSE](LICE
 ---
 
 **Disclaimer:** This project is purely for creative and educational purposes. It does not provide actual terminal functionality and should not be used for production environments or to execute real commands. Always adhere to website access policies and guidelines.
-
-[**Try it out for yourself**](https://xkow.xyz/error/index.html)
