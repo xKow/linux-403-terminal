@@ -35,3 +35,5 @@ This project is licensed under the **xkow.xyz** License - see the [LICENSE](LICE
 ---
 
 **Disclaimer:** This project is purely for creative and educational purposes. It does not provide actual terminal functionality and should not be used for production environments or to execute real commands. Always adhere to website access policies and guidelines.
+
+[**Try it out for yourself**](https://xkow.xyz/error/index.html)
